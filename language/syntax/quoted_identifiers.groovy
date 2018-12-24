@@ -1,20 +1,19 @@
 
-println '-----------------'
-println '>>> method names:'
-println '-----------------'
+// --------------
+// Method names :
+// --------------
 
 def 'some function'() {
-    println 'some function call'
+    'some function call'
 }
 
-'some function'()
+assert 'some function'() == 'some function call'
 
-
-println '----------------'
-println '>>> map entries:'
-println '----------------'
+// -------------
+// Map entries :
+// -------------
 
 def map = [:]
 map.'some key' = 'some value'
 
-println map.'some key'
+assert map.'some key' == 'some value'

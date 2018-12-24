@@ -7,7 +7,6 @@ assert [1, 2, 3].collect { it + 1 } == [2, 3, 4]
 
 assert [1, 2, 3].first() == 1
 assert [1, 2, 3].last() == 3
-assert [1, 2, 3][-1] == 3
 
 assert [1, 2, 3].min() == 1
 assert [1, 2, 3].max() == 3

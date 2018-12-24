@@ -1,7 +1,7 @@
 
-println '----------------------------------------'
-println '>>> using underscore in number literals:'
-println '----------------------------------------'
+// -------------------------------------
+// Using underscore in number literals :
+// -------------------------------------
 
-println 5_000
-println 3_210.1__20
+assert 5_000 == 5000
+assert 3_210.1__20 == 3210.12

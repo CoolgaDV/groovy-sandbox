@@ -1,91 +1,74 @@
 
 def value = 'some value'
 
+// ----------------------
+// Single-quoted string :
+// ----------------------
 
-println '---------------------'
-println 'single-quoted string:'
-println '---------------------'
+assert 'single-quoted string'.class == String
 
-def singleQuotedString = 'single-quoted string'
-println singleQuotedString
-println singleQuotedString.class
+// --------------------------------
+// Double-quoted string (GString) :
+// --------------------------------
 
+assert "double-quoted string: $value ${1 + 2}" instanceof GString
 
-println '-------------------------------'
-println 'double-quoted string (GString):'
-println '-------------------------------'
+// -----------------------------
+// Triple single-quoted string :
+// -----------------------------
 
-def doubleQuotedString = "double-quoted string: $value ${1 + 2}"
-println doubleQuotedString
-println doubleQuotedString.class
-
-
-println '--------------------------------'
-println '>>> triple single-quoted string:'
-println '--------------------------------'
-
-def tripleSingleQuotedString = '''\
+assert '''\
   Triple
   Single\
   Quoted
   
   String\
-'''.stripIndent()
-println tripleSingleQuotedString
-println tripleSingleQuotedString.class
+'''.class == String
 
+// -----------------------------
+// Triple double-quoted string :
+// -----------------------------
 
-println '--------------------------------'
-println '>>> triple double-quoted string:'
-println '--------------------------------'
-
-def tripleDoubleQuotedString = """\
+assert """\
   Double
   Single\
   Quoted
   
   String $value ${1 + 2}\
-""".stripIndent()
-println tripleDoubleQuotedString
-println tripleDoubleQuotedString.class
+""" instanceof GString
 
-
-println '------------------'
-println '>>> slashy string:'
-println '------------------'
+// ---------------
+// Slashy string :
+// ---------------
 
 def slashyString = /\
   \Slashy
   
   \String $value ${1 + 2}\
-/.stripIndent()
-println slashyString
-println slashyString.class
+/
+assert slashyString instanceof GString
 
-
-println '-------------------------'
-println '>>> dollar-slashy string:'
-println '-------------------------'
+// ----------------------
+// Dollar-slashy string :
+// ----------------------
 
 def dollarSlashyString = $/\
   /Dollar
   /Slashy
   
   /String $value ${1 + 2}\
-/$.stripIndent()
-println dollarSlashyString
-println dollarSlashyString.class
+/$
+assert dollarSlashyString instanceof GString
 
-
-println '--------------------------------'
-println '>>> interpolation with closures:'
-println '--------------------------------'
+// -----------------------------
+// Interpolation with closures :
+// -----------------------------
 
 def variable = 5
 def closureInterpolatedString = "variable is: ${ -> variable }"
 
-println closureInterpolatedString
+assert closureInterpolatedString == 'variable is: 5'
 
 variable = 10
 
-println closureInterpolatedString
+assert closureInterpolatedString == 'variable is: 10'

@@ -1,7 +1,7 @@
 
-// -------------------------
-// Safe navigation operator:
-// -------------------------
+// --------------------------
+// Safe navigation operator :
+// --------------------------
 
 class Person { String name }
 
@@ -11,9 +11,9 @@ assert person?.name == 'some'
 person = null
 assert person?.name == null
 
-// --------------------
-// Direct field access:
-// --------------------
+// ---------------------
+// Direct field access :
+// ---------------------
 
 class Location {
 
@@ -29,9 +29,9 @@ Location location = new Location(address: 'some')
 assert location.address == 'address: some'
 assert location.@address == 'some'
 
-// ------------------
-// Method references:
-// ------------------
+// -------------------
+// Method references :
+// -------------------
 
 String string = 'some string'
 Closure<String> reference = string.&toUpperCase

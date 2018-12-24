@@ -1,7 +1,7 @@
 
-// --------------------
-// multiple assignment:
-// --------------------
+// ---------------------
+// Multiple assignment :
+// ---------------------
 
 def (a, b, c) = [1, 2, 3]
 assert a == 1 && b == 2 && c == 3
@@ -9,9 +9,9 @@ assert a == 1 && b == 2 && c == 3
 def (d, e, f) = [4, 5]
 assert d == 4 && e == 5 && f == null
 
-// ---------------------
-// object destructuring:
-// ---------------------
+// ----------------------
+// Object destructuring :
+// ----------------------
 
 class Person {
 

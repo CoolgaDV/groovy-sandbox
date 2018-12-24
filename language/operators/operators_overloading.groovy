@@ -1,4 +1,8 @@
 
+// -------------------------------------
+// Plus and call operators overloading :
+// -------------------------------------
+
 class Bucket {
 
     Integer capacity

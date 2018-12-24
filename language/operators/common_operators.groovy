@@ -57,9 +57,9 @@ assert (1 <=> 2) == -1
 def collection = [0, 1, 2]
 assert 1 in collection
 
-// --------------------------
+// ------------------------
 // Identity operator (is) :
-// --------------------------
+// ------------------------
 
 def firstList = [0, 1, 2]
 def secondList = [0, 1, 2]

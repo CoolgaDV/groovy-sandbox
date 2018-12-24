@@ -2,24 +2,24 @@
 import java.util.regex.Pattern
 import java.util.regex.Matcher
 
-// ------------------------
-// Create pattern operator:
-// ------------------------
+// -------------------------
+// Create pattern operator :
+// -------------------------
 
 def pattern = ~/some/
 assert pattern instanceof Pattern
 
-// ------------------------
-// Create Matcher operator:
-// ------------------------
+// -------------------------
+// Create Matcher operator :
+// -------------------------
 
 def matcher = 'some text' =~ /some/
 assert matcher instanceof Matcher
 assert matcher.find()
 
-// ---------------
-// Match operator:
-// ---------------
+// ----------------
+// Match operator :
+// ----------------
 
 def match = 'other text' ==~ /other.*/
 assert match instanceof Boolean

@@ -1,64 +1,53 @@
 
 import java.util.concurrent.ConcurrentHashMap
 
+def list = [1, 2, 3]
+def map = ['1': 'some', '2':'any']
 
-println '-----------------'
-println '>>> list classes:'
-println '-----------------'
+// --------------
+// List classes :
+// --------------
 
-def defaultList = [1, 2, 3]
-println defaultList.class
+assert list.class == ArrayList
+assert (list as LinkedList).class == LinkedList
 
-def linkedList = [1, 2, 3] as LinkedList
-println linkedList.class
+// ----------------------
+// List elements access :
+// ----------------------
 
+assert list[0] == 1
+assert list[3] == null
+assert list[-1] == 3
+assert list[1..2] == [2, 3]
 
-println '-------------------------'
-println '>>> list elements access:'
-println '-------------------------'
+// --------------------------
+// Adding elements to lists :
+// --------------------------
 
-println defaultList[0]
-println defaultList[3]
-println defaultList[-1]
-println defaultList[1..2]
+list << 4
+list.add(5)
+assert list == [1, 2, 3, 4, 5]
 
+// ------------
+// Maps class :
+// ------------
 
-println '-----------------------------'
-println '>>> adding elements to lists:'
-println '-----------------------------'
+assert map.getClass() == LinkedHashMap
+assert (map as ConcurrentHashMap).getClass() == ConcurrentHashMap
 
-println defaultList
-defaultList << 4
-defaultList.add(5)
-println defaultList
+// ----------------------
+// Maps elements access :
+// ----------------------
 
+assert map.'1' == 'some'
+assert map['2'] == 'any'
+assert map['1'] == 'some'
 
-println '---------------'
-println '>>> maps class:'
-println '---------------'
-
-def defaultMap = ['1': 'some', '2':'any']
-println defaultMap.getClass()
-
-def concurrentMap = ['1': 'some', '2':'any'] as ConcurrentHashMap
-println concurrentMap.getClass()
-
-
-println '-------------------------'
-println '>>> maps elements access:'
-println '-------------------------'
-
-println defaultMap.'1'
-println defaultMap['2']
-println defaultMap[1]
-
-
-println '-----------'
-println '>>> arrays:'
-println '-----------'
+// --------
+// Arrays :
+// --------
 
 String[] stringArray = ['1', '2', '3']
-println stringArray.class
+assert stringArray.class == String[]
 
-def intArray = [1, 2, 3] as int[]
-println intArray.class
+assert ([1, 2, 3] as int[]).class == int[]
